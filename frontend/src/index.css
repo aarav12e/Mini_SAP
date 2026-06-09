@@ -1,0 +1,238 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sap-blue: #003399;
+  --sap-blue-light: #0050b3;
+  --sap-grey: #d4d0c8;
+  --sap-grey-dark: #c0bdb5;
+  --sap-grey-input: #f5f5f0;
+  --sap-white: #ffffff;
+  --sap-border-light: #ffffff;
+  --sap-border-dark: #808080;
+  --sap-red: #cc0000;
+  --sap-green: #006600;
+  --sap-yellow: #ffffcc;
+  --sap-table-alt: #eeeef8;
+  --sap-table-select: #b8cce4;
+  --sap-table-hover: #c9dff5;
+  --sap-font: Arial, Helvetica, sans-serif;
+  --sap-mono: 'Courier New', Courier, monospace;
+  --sap-font-size: 12px;
+}
+
+body {
+  font-family: var(--sap-font);
+  font-size: var(--sap-font-size);
+  background: var(--sap-grey);
+  color: #000;
+  line-height: 1.3;
+}
+
+/* SAP-style scrollbar */
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: var(--sap-grey); }
+::-webkit-scrollbar-thumb { background: var(--sap-grey-dark); border: 2px solid var(--sap-grey); border-top-color: var(--sap-border-light); border-left-color: var(--sap-border-light); }
+::-webkit-scrollbar-thumb:hover { background: #a8a5a0; }
+
+/* SAP Button */
+.sap-btn {
+  background: var(--sap-grey);
+  border: 1px solid;
+  border-top-color: var(--sap-border-light);
+  border-left-color: var(--sap-border-light);
+  border-right-color: var(--sap-border-dark);
+  border-bottom-color: var(--sap-border-dark);
+  padding: 2px 8px;
+  font-size: 11px;
+  font-family: var(--sap-font);
+  cursor: pointer;
+  color: #000;
+  min-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.sap-btn:active {
+  border-top-color: var(--sap-border-dark);
+  border-left-color: var(--sap-border-dark);
+  border-right-color: var(--sap-border-light);
+  border-bottom-color: var(--sap-border-light);
+}
+.sap-btn:hover { background: #c8c5be; }
+.sap-btn.primary { background: var(--sap-blue); color: #fff; border-color: var(--sap-blue-light); }
+.sap-btn.primary:hover { background: var(--sap-blue-light); }
+.sap-btn.danger { background: var(--sap-red); color: #fff; }
+.sap-btn:disabled { color: #888; cursor: default; }
+
+/* SAP Input */
+.sap-input {
+  border: 1px solid;
+  border-top-color: var(--sap-border-dark);
+  border-left-color: var(--sap-border-dark);
+  border-right-color: var(--sap-border-light);
+  border-bottom-color: var(--sap-border-light);
+  background: var(--sap-white);
+  padding: 1px 3px;
+  font-size: 11px;
+  font-family: var(--sap-font);
+  height: 20px;
+  outline: none;
+}
+.sap-input:focus { outline: 1px solid var(--sap-blue); }
+.sap-input.required { background: var(--sap-yellow); }
+.sap-input.readonly { background: var(--sap-grey); }
+.sap-input.mono { font-family: var(--sap-mono); }
+
+.sap-select {
+  border: 1px solid var(--sap-border-dark);
+  background: var(--sap-white);
+  padding: 1px 2px;
+  font-size: 11px;
+  font-family: var(--sap-font);
+  height: 20px;
+  outline: none;
+}
+
+/* SAP Table */
+.sap-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.sap-table th {
+  background: var(--sap-blue);
+  color: #fff;
+  padding: 2px 6px;
+  text-align: left;
+  font-weight: normal;
+  border: 1px solid #00288a;
+  white-space: nowrap;
+  user-select: none;
+}
+.sap-table td { padding: 2px 6px; border: 1px solid var(--sap-grey-dark); background: var(--sap-white); }
+.sap-table tr:nth-child(even) td { background: var(--sap-table-alt); }
+.sap-table tr.selected td { background: var(--sap-table-select) !important; }
+.sap-table tr:hover td { background: var(--sap-table-hover); cursor: pointer; }
+.sap-table td.num { text-align: right; font-family: var(--sap-mono); }
+.sap-table td.red { color: var(--sap-red); font-weight: bold; }
+.sap-table td.green { color: var(--sap-green); }
+
+/* SAP Fieldset */
+.sap-fieldset {
+  border: 1px solid var(--sap-border-dark);
+  margin-bottom: 8px;
+  padding: 4px 6px 6px;
+}
+.sap-fieldset legend {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 0 4px;
+  color: #000;
+}
+.sap-field-row {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  gap: 0;
+}
+.sap-field-label {
+  font-size: 11px;
+  width: 160px;
+  text-align: right;
+  padding-right: 6px;
+  flex-shrink: 0;
+  color: #000;
+}
+
+/* Tabs */
+.sap-tabs { display: flex; border-bottom: 1px solid var(--sap-border-dark); padding: 2px 4px 0; background: var(--sap-grey); }
+.sap-tab {
+  padding: 3px 14px;
+  font-size: 11px;
+  border: 1px solid var(--sap-border-dark);
+  border-bottom: none;
+  cursor: pointer;
+  background: var(--sap-grey-dark);
+  margin-right: 2px;
+}
+.sap-tab.active {
+  background: var(--sap-grey);
+  border-bottom: 1px solid var(--sap-grey);
+  margin-bottom: -1px;
+  font-weight: bold;
+  z-index: 1;
+}
+.sap-tab:hover:not(.active) { background: #c0bdb5; }
+
+/* Screen header */
+.sap-screen-header {
+  background: var(--sap-blue);
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Status bar */
+.sap-status-bar {
+  background: var(--sap-grey);
+  border-top: 1px solid var(--sap-border-light);
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.status-msg-info { color: var(--sap-blue); font-weight: bold; }
+.status-msg-error { color: var(--sap-red); font-weight: bold; }
+.status-msg-success { color: var(--sap-green); font-weight: bold; }
+
+/* ABAP Code editor container */
+.abap-editor-wrap { border: 1px solid var(--sap-border-dark); background: #1e1e1e; min-height: 300px; }
+.abap-output { background: #000; color: #00ff00; font-family: var(--sap-mono); font-size: 12px; padding: 8px; min-height: 100px; white-space: pre-wrap; }
+
+/* Separator */
+.sap-sep { width: 1px; background: var(--sap-border-dark); height: 18px; margin: 0 3px; display: inline-block; vertical-align: middle; }
+
+/* Message box */
+.sap-msg { padding: 3px 8px; font-size: 11px; display: flex; align-items: center; gap: 6px; margin: 4px 8px; border: 1px solid; }
+.sap-msg.info { background: #e8f4fd; border-color: #aad4f5; color: #003399; }
+.sap-msg.warning { background: #fff8e1; border-color: #ffe082; color: #7a5000; }
+.sap-msg.error { background: #fdecea; border-color: #f5c2c0; color: #cc0000; }
+.sap-msg.success { background: #e8f5e9; border-color: #a5d6a7; color: #006600; }
+
+/* KPI tiles */
+.kpi-row { display: flex; gap: 6px; padding: 8px; }
+.kpi-tile { background: #fff; border: 1px solid var(--sap-border-dark); padding: 6px 10px; flex: 1; text-align: center; min-width: 100px; }
+.kpi-value { font-size: 20px; font-weight: bold; color: var(--sap-blue); }
+.kpi-label { font-size: 10px; color: #555; margin-top: 2px; }
+
+/* Toolbar */
+.sap-toolbar { background: var(--sap-grey); border-bottom: 1px solid var(--sap-border-dark); display: flex; align-items: center; padding: 2px 4px; gap: 2px; flex-wrap: wrap; }
+
+/* Login */
+.login-wrap { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--sap-grey); }
+.login-box { background: var(--sap-grey); border: 2px solid; border-top-color: var(--sap-border-light); border-left-color: var(--sap-border-light); border-right-color: var(--sap-border-dark); border-bottom-color: var(--sap-border-dark); width: 380px; }
+.login-header { background: var(--sap-blue); color: #fff; padding: 8px 12px; font-size: 14px; font-weight: bold; }
+.login-body { padding: 20px; }
+.login-logo { text-align: center; margin-bottom: 16px; }
+.login-logo .sap-r { font-size: 48px; font-weight: bold; color: var(--sap-blue); line-height: 1; }
+.login-logo .sap-sub { font-size: 10px; color: #555; }
+
+/* Utility */
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.bold { font-weight: bold; }
+.red { color: var(--sap-red); }
+.green { color: var(--sap-green); }
+.blue { color: var(--sap-blue); }
+.mt4 { margin-top: 4px; }
+.mb4 { margin-bottom: 4px; }
+.p8 { padding: 8px; }
+.flex { display: flex; }
+.flex-1 { flex: 1; }
+.gap4 { gap: 4px; }
+.gap8 { gap: 8px; }
+.w100 { width: 100%; }
+.overflow-auto { overflow: auto; }
