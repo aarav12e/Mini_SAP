@@ -114,4 +114,4 @@ mini-sap-erp/
 8. Go to **SM50** — watch work processes in real time
 
 ---
-Built by Aarav Kumar | VGI Greater Noida | 2026
+Built by Aarav Kumar
