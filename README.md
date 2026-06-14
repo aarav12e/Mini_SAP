@@ -1,4 +1,4 @@
-# Mini SAP ERP System — MERN Stack
+# Mini SAP ERP System 
 
 A full Mini SAP ERP built with **MongoDB + Express + React + Node.js**, styled faithfully after **SAP GUI 7** — classic blue header, grey body, compact tables, T-code navigation and all.
 
