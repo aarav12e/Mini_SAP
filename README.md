@@ -115,4 +115,3 @@ mini-sap-erp/
 
 ---
 Built by Aarav Kumar
-Please Give it a Star
